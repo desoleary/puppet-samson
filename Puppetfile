@@ -10,10 +10,10 @@
 # Shortcut for a module from GitHub's boxen organization
 def github(name, *args)
   options ||= if args.last.is_a? Hash
-    args.last
-  else
-    {}
-  end
+                args.last
+              else
+                {}
+              end
 
   if path = options.delete(:path)
     mod name, :path => path
@@ -24,11 +24,12 @@ def github(name, *args)
   end
 end
 
-forge 'https://forgeapi.puppetlabs.com'
-mod    'puppetlabs-vcsrepo'
+forge 'https://forge.puppetlabs.com'
+mod 'puppetlabs-vcsrepo'
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 github 'iterm2', '1.2.5'
-github 'virtualbox'
+mod 'puppet-virtualbox',
+    :git => "https://github.com/jcjohn/puppet-virtualbox.git"
 github 'vagrant'
