@@ -6,3 +6,6 @@
 /spec/fixtures/modules/boxen/
 /spec/fixtures/modules/stdlib/
 /spec/fixtures/vendor
+
+## Rubymine
+.idea
