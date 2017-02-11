@@ -17,10 +17,15 @@ class samson(
 
   homebrew::tap { 'theseal/ssh-askpass': }
   package { ['ssh-askpass']:
-    ensure => installed
+    ensure => installed,
+    require => Homebrew::Tap['theseal/ssh-askpass']
   }
 
-  package { ['1password']:
+  package { ['coreutils','gpg','jq']:
+    ensure => installed,
+  }
+
+  package { ['1password','spotify','atom','tunnelblick','spectacle','the-unarchiver']:
     ensure   => installed,
     provider => 'brewcask'
   }
